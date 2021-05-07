@@ -1,0 +1,21 @@
+plugins {
+  id 'scala' // scala support
+  id 'nebula.lint' version '16.23.0' // detect dependency issues
+}
+
+gradleLint {
+  alwaysRun = false
+  rules = ['all-dependency']
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation "org.scala-lang:scala-library:2.13.5"
+}
+
+wrapper {
+  gradleVersion = '6.8.3'
+}
